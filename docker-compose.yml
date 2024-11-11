@@ -1,0 +1,37 @@
+services:
+  mysql:
+    image: mysql:5.7
+    platform: linux/amd64
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: secureeb24p
+      MYSQL_DATABASE: prestashop-db
+    volumes:
+      - ./dbdata:/var/lib/mysql
+    networks:
+      - prestashop-net
+
+  prestashop:
+    image: prestashop/prestashop:1.7.8
+    platform: linux/amd64
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    ports:
+      - "8080:80"
+    environment:
+      DB_SERVER: mysql
+      DB_NAME: prestashop-db
+      DB_USER: root
+      DB_PASSWD: secureeb24p
+      PS_INSTALL_AUTO:
+      PS_FOLDER_ADMIN: admXz5f9w7be
+    volumes:
+      - ./prestashop:/var/www/html
+    networks:
+      - prestashop-net
+
+networks:
+  prestashop-net:
+volumes:
+  dbdata:
