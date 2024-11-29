@@ -1,0 +1,146 @@
+#header {
+  border-bottom: 1px solid #e2e2e2;
+  box-shadow: none;
+}
+
+.header-nav.miedzydrutami-nav {
+  background: $c_gray;
+  padding:1rem;
+  @include breakpoint(tablet){
+    display: none;
+  }
+  .container {
+    .row {
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      gap:1rem;
+      .top-bar-section {
+        display: flex;
+        gap:1rem;
+        flex-grow:1;
+        &:last-child {
+          justify-content: flex-end;
+        }
+        a, h3 {
+          font-size: 1.4em;
+          margin:0;
+          font-weight:500;
+          text-decoration: none;
+          color: #111;
+        }
+        h3 {
+          text-transform: uppercase;
+        }
+        .social-icon {
+          span {
+            svg {
+              color:gray;
+              width:16px;
+              height:16px;
+              &:hover {
+                color: #111;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+#header {
+  .header-top.miedzydrutami-header-top {
+    padding-top:1rem;
+    padding-bottom:1rem;
+    .container {
+      .row {
+        display: flex;
+        justify-content: space-between;
+        .nav-btn {
+          display: none;
+          @media (max-width:768px){
+            margin-left:1rem;
+            display: initial;
+          }
+        }
+        .nav-col {
+          &--logo {
+            flex: 0 0 100px;
+            margin-right:3rem;
+          }
+          &--menu {
+            display:flex;
+            align-items:center;
+            flex-grow:1;
+            justify-content: space-between;
+            @include breakpoint(tablet){
+
+              justify-content: flex-end;
+            }
+            .top-menu {
+              display: flex;
+              gap:1rem;
+              margin-left:3rem;
+              @include breakpoint(smallerDesktop) {
+                display: initial;
+                gap:.3rem;
+                margin-left: 0;
+              }
+              li {
+                a {
+                  font-size:16px !important;
+                  color: $c_black;
+                  text-transform: initial !important;
+                }
+              }
+            }
+            #search_widget {
+              min-width:initial;
+              overflow:initial;
+              margin:0;
+              form {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                gap:.3rem;
+                i {
+                  padding: 0;
+                  position:relative;
+                  cursor:pointer;
+                }
+                input {
+                  display: none;
+                  padding:.5rem 1rem;
+                }
+              }
+              &.active {
+                form {
+                  input {
+                    display: initial;
+                  }
+                }
+              }
+            }
+          }
+          &--account-menu {
+            display:flex;
+            align-items:center;
+            margin-left:.75rem; // must be same as gap
+            gap:.75rem; // must be same as margin-left
+            a, div {
+              span {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+
