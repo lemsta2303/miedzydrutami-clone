@@ -1,7 +1,7 @@
 // color variables
-$c_one: #fff;
-$c_two: #000;
-
+$c_gray: #f5f5f5;
+$c_pink: #ff6f61;
+$c_black: #111;
 
 //breakpoints
 @mixin breakpoint($point) {
