@@ -1,3 +1,39 @@
 #wrapper {
+  padding-top: 0;
   background: #fff;
+  .container {
+    width: auto;
+    max-width: initial;
+    padding:0;
+    box-sizing: border-box;
+    #carousel {
+      margin-bottom:7rem;
+      .carousel-inner {
+        height:auto;
+        .carousel-item {
+          figure {
+            width:100%;
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+      .direction {
+        display: none;
+      }
+      .carousel-indicators {
+        display: initial;
+        bottom:-5rem;
+        li {
+          border: 0;
+          background: $c_gray;
+          &.active {
+            background: $c_pink;
+          }
+        }
+      }
+    }
+  }
 }
