@@ -390,6 +390,7 @@ a:hover {
 }
 #wrapper .container .featured-products.miedzydrutami-featured-products {
   margin-bottom: 3rem;
+  overflow: hidden;
 }
 #wrapper .container .featured-products.miedzydrutami-featured-products .products-section-title {
   margin: 0 0 3rem;
@@ -436,14 +437,144 @@ a:hover {
   display: none !important;
 }
 #wrapper .container .latest-products {
-  margin: 2rem 0;
-}
-#wrapper .container .latest-products .title {
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 30px;
-  margin-bottom: 20px;
   text-align: center;
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+#wrapper .container .latest-products h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+#wrapper .container .latest-products .slide {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+#wrapper .container .latest-products .slide .product-img {
+  flex: 1;
+}
+#wrapper .container .latest-products .slide .product-img img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+@media (max-width: 960px) {
+  #wrapper .container .latest-products .slide .product-img {
+    display: none;
+  }
+}
+#wrapper .container .latest-products .slide .product-carousel {
+  flex: 1;
+  position: relative;
+}
+#wrapper .container .latest-products .slide .product-carousel .product {
+  display: none;
+  text-align: center;
+}
+#wrapper .container .latest-products .slide .product-carousel .product img {
+  width: 80px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+#wrapper .container .latest-products .slide .product-carousel .product img:hover {
+  transform: scale(1.1);
+}
+#wrapper .container .latest-products .slide .product-carousel .product.active {
+  display: block;
+}
+#wrapper .container .latest-products .carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0;
+  background: #fff;
+}
+#wrapper .container .latest-products .carousel-arrow.left {
+  left: -50px;
+}
+@media (max-width: 960px) {
+  #wrapper .container .latest-products .carousel-arrow.left {
+    left: 10px;
+  }
+}
+#wrapper .container .latest-products .carousel-arrow.right {
+  right: -50px;
+}
+@media (max-width: 960px) {
+  #wrapper .container .latest-products .carousel-arrow.right {
+    right: 10px;
+  }
+}
+#wrapper .container .latest-products .carousel-arrow:focus {
+  outline: none;
+}
+#wrapper .container .latest-products .thumbnail-top img {
+  width: 100% !important;
+  margin: 0;
+}
+#wrapper .container .alternating-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 40px auto;
+  max-width: 1070px;
+  padding: 0 1rem;
+}
+#wrapper .container .alternating-sections .section-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#wrapper .container .alternating-sections .section-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+#wrapper .container .alternating-sections .section-row .text-content {
+  flex: 1;
+  padding: 20px;
+}
+#wrapper .container .alternating-sections .section-row .text-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+#wrapper .container .alternating-sections .section-row .text-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+#wrapper .container .alternating-sections .section-row .text-content p strong {
+  color: #333;
+}
+#wrapper .container .alternating-sections .section-row .image-content {
+  flex: 1;
+}
+#wrapper .container .alternating-sections .section-row .image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  #wrapper .container .alternating-sections .section-row {
+    flex-direction: column;
+  }
+  #wrapper .container .alternating-sections .section-row .text-content,
+  #wrapper .container .alternating-sections .section-row .image-content {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=custom.css.map */

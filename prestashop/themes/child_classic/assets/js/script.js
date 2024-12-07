@@ -29,4 +29,30 @@ document.addEventListener('DOMContentLoaded', () => {
             tab.classList.add('active');
         });
     });
+
+    const productImages = document.querySelectorAll('.product-carousel img'); // Wszystkie obrazy w karuzeli
+    const largeImage = document.getElementById('large-product-image'); // Duże zdjęcie
+    const leftArrow = document.querySelector('.carousel-arrow.left'); // Strzałka lewa
+    const rightArrow = document.querySelector('.carousel-arrow.right'); // Strzałka prawa
+    const products = document.querySelectorAll('.product-carousel .product'); // Produkty w karuzeli
+    let currentIndex = 0;
+
+    const updateActiveProduct = () => {
+        products.forEach((product, index) => {
+            product.style.display = index === currentIndex ? 'block' : 'none';
+        });
+        largeImage.src = productImages[currentIndex].dataset.large || productImages[currentIndex].src;
+    };
+
+    leftArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + products.length) % products.length;
+        updateActiveProduct();
+    });
+
+    rightArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % products.length;
+        updateActiveProduct();
+    });
+
+    updateActiveProduct();
 });

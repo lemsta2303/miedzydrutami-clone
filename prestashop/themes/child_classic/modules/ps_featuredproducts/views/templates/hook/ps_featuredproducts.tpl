@@ -180,12 +180,52 @@
 
 <section class="latest-products">
   <h2 class="title ">Najnowsze produkty</h2>
-  <div class="product-carousel tns-carousel">
-    {foreach from=$products item=product key=key name=products_loop}
-      {if $smarty.foreach.products_loop.index < 3}
-        {include file="catalog/_partials/miniatures/product.tpl" product=$product}
-      {/if}
-    {/foreach}
+  <button class="carousel-arrow left">←</button>
+  <div class="slide">
+    <div class="product-img">
+      <img src="" alt="Wielki obraz produktu" id="large-product-image">    </div>
+    <div class="product-carousel tns-carousel">
+      {foreach from=$products item=product key=key name=products_loop}
+        {if $smarty.foreach.products_loop.index < 3}
+          {include file="catalog/_partials/miniatures/product.tpl" product=$product}
+        {/if}
+      {/foreach}
+    </div>
   </div>
+
+  <button class="carousel-arrow right">→</button>
 </section>
 
+
+
+<section class="alternating-sections">
+  <div class="section-row">
+    <div class="text-content">
+      <h2>Nasz sklep z włóczkami pokocha każda dziewiarka</h2>
+      <p>
+        Jesteśmy dumni, że udało nam się stworzyć sklep dziewiarski tak znakomicie wyposażony w różnorodne wysokiej jakości, naturalne włóczki oraz akcesoria. Szeroka gama dostępnych włóczek pozwala tworzyć niezwykłe, kolorowe projekty, które pod wieloma względami są wyjątkowe.
+      </p>
+      <p>
+        <strong>Nasza hurtownia włóczek</strong> powstała po to, aby zaspokoić potrzeby każdego, kto uwielbia tworzyć i czuje satysfakcję z przygotowania prawdziwych dziewiarskich dzieł sztuki w najlepszym, naturalnym wydaniu.
+      </p>
+    </div>
+    <div class="image-content">
+      <img src="/themes/child_classic/assets/img/alternating1.jpg" alt="Kolorowe włóczki">
+    </div>
+  </div>
+
+  <div class="section-row reverse">
+    <div class="image-content">
+      <img src="/themes/child_classic/assets/img/alternating2.jpg" alt="Włóczki w koszyku">
+    </div>
+    <div class="text-content">
+      <h2>Sklep z włóczkami pełen pasji</h2>
+      <p>
+        Między Drutami zostało stworzone z myślą o prawdziwych pasjonatach, którzy chcą mieć wszystkie niezbędne produkty i akcesoria dziewiarskie w jednym miejscu. Chcieliśmy otworzyć miejsce, w którym dostępne będą wyłącznie włóczki z naturalnych włókien wyróżniające się niepowtarzalnym pięknem i trwałością.
+      </p>
+      <p>
+        Między Drutami to miejsce, które warto odwiedzić!
+      </p>
+    </div>
+  </div>
+</section>
