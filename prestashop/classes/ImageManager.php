@@ -43,7 +43,6 @@ class ImageManagerCore
         'image/pjpeg',
         'image/png',
         'image/x-png',
-        'image/webp'
     ];
 
     const EXTENSIONS_SUPPORTED = [
@@ -452,7 +451,7 @@ class ImageManagerCore
     {
         // Filter on file extension
         if ($authorizedExtensions === null) {
-            $authorizedExtensions = ['gif', 'jpg', 'jpeg', 'jpe', 'png', 'webp'];
+            $authorizedExtensions = ['gif', 'jpg', 'jpeg', 'jpe', 'png'];
         }
         $nameExplode = explode('.', $filename);
         if (count($nameExplode) >= 2) {
@@ -483,7 +482,7 @@ class ImageManagerCore
             return Context::getContext()->getTranslator()->trans('Image is too large (%1$d kB). Maximum allowed: %2$d kB', [$file['size'] / 1024, $maxFileSize / 1024], 'Admin.Notifications.Error');
         }
         if (!ImageManager::isRealImage($file['tmp_name'], $file['type'], $mimeTypeList) || !ImageManager::isCorrectImageFileExt($file['name'], $types) || preg_match('/\%00/', $file['name'])) {
-            return Context::getContext()->getTranslator()->trans('Image format not recognized, allowed formats are: .gif, .jpg, .png', '.webp', [], 'Admin.Notifications.Error');
+            return Context::getContext()->getTranslator()->trans('Image format not recognized, allowed formats are: .gif, .jpg, .png', [], 'Admin.Notifications.Error');
         }
         if ($file['error']) {
             return Context::getContext()->getTranslator()->trans('Error while uploading image; please change your server\'s settings. (Error code: %s)', [$file['error']], 'Admin.Notifications.Error');
@@ -581,11 +580,6 @@ class ImageManagerCore
 
                 break;
 
-            case IMAGETYPE_WEBP:
-                return imagecreatefromwebp($filename);
-
-                break;
-
             case IMAGETYPE_JPEG:
             default:
                 return imagecreatefromjpeg($filename);
@@ -673,7 +667,6 @@ class ImageManagerCore
             'image/gif' => ['gif'],
             'image/jpeg' => ['jpg', 'jpeg'],
             'image/png' => ['png'],
-            'image/webp' => ['webp'],
         ];
         $extension = substr($fileName, strrpos($fileName, '.') + 1);
 
