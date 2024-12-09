@@ -2,21 +2,21 @@
 
 {shop_url}
 
-Witaj {firstname} {lastname},
+Hi {firstname} {lastname},
 
-Twój koszyk na {shop_name}
+Your cart at {shop_name}
 
-Dziękuję za Twoją wizytę. Wygląda jednak na to, że nie dokończyłeś zakupu.
+Thanks for your visit. However, it looks like you did not complete your purchase.
 
-Twój koszyk został zapisany, możesz wrócić do zamówienia w naszym sklepie: {shop_url}
+Your cart has been saved, you can go back to your order on our shop: {shop_url}
 
-Z przyjemnością oferujemy Ci zniżkę w wysokości {amount}% na kolejne zamówienie. Ta oferta jest ważna przez {days} dni, więc nie czekaj dłużej!
+We are pleased to offer you a discount of {amount}% off your next order. And this offer is valid for {days} days, so do not wait any longer!
 
-Twój kod kuponu w {shop_name}
+Your voucher code on {shop_name}
 
-Oto Twój KOD VOUCHER: {voucher_num}
+Here is your VOUCHER CODE: {voucher_num}
 
-Wprowadź ten kod w koszyku, aby uzyskać zniżkę.
+Enter this code in your shopping cart to get the discount.
 
 [{shop_name}]({shop_url})
 
