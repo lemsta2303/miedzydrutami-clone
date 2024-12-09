@@ -1,7 +1,7 @@
 services:
   mysql:
-    image: mysql:5.7
     platform: linux/amd64
+    image: mysql:5.7
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: secureeb24p
@@ -12,24 +12,28 @@ services:
       - prestashop-net
 
   prestashop:
-    image: prestashop/prestashop:1.7.8
     platform: linux/amd64
+    build:
+      context: ./config
+      dockerfile: Dockerfile
+    image: prestashop/prestashop:1.7.8
     restart: unless-stopped
-    depends_on:
-      - mysql
-    ports:
-      - "8080:80"
     environment:
       DB_SERVER: mysql
       DB_NAME: prestashop-db
       DB_USER: root
       DB_PASSWD: secureeb24p
-      PS_INSTALL_AUTO:
+      PS_INSTALL_AUTO: 
       PS_FOLDER_ADMIN: admXz5f9w7be
-    volumes:
-      - ./prestashop:/var/www/html
+    ports:
+      - "8080:80"
+      - "443:443"
     networks:
       - prestashop-net
+    volumes:
+      - ./prestashop:/var/www/html
+    depends_on:
+      - mysql
 
 networks:
   prestashop-net:
