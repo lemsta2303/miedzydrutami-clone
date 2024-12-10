@@ -12,3 +12,5 @@ prestashop/var/logs
 prestashop/var/sessions
 prestashop/var/modules
 prestashop/cache
+
+.DS_Store
