@@ -12,7 +12,7 @@ import logging
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-API_KEY = "B4C2A1TD5M4DE9C6GZS5AZSG239NLUWZ"
+API_KEY = "1743CVHJIMQTNZPF3DC51RGUEEQ6BXU9"
 JSON_DIR = BASE_DIR / "scraper-data"
 JSON_FILE = JSON_DIR / "data.json"
 XML_VIEW = BASE_DIR / "scraper/views"
@@ -224,7 +224,7 @@ def remove_all():
 if __name__ == "__main__":
     remove_all()
     print("Deleted all content from prestashop")
-    created_products = read_and_seed(JSON_DIR, product_limit=500)
+    created_products = read_and_seed(JSON_DIR, product_limit=1000)
     print(f"Product imported to prestshop: {len(created_products)}")
     session = requests.Session()
     session.verify = False

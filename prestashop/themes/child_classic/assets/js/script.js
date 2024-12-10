@@ -37,22 +37,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const products = document.querySelectorAll('.product-carousel .product'); // Produkty w karuzeli
     let currentIndex = 0;
 
-    const updateActiveProduct = () => {
-        products.forEach((product, index) => {
-            product.style.display = index === currentIndex ? 'block' : 'none';
+    // const updateActiveProduct = () => {
+    //     products.forEach((product, index) => {
+    //         product.style.display = index === currentIndex ? 'block' : 'none';
+    //     });
+    //     if(productImages[currentIndex].dataset){
+    //         largeImage.src = productImages[currentIndex].dataset.large || productImages[currentIndex].src;
+    //     }
+    // };
+
+    if(leftArrow){
+        leftArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + products.length) % products.length;
+            updateActiveProduct();
         });
-        largeImage.src = productImages[currentIndex].dataset.large || productImages[currentIndex].src;
-    };
-
-    leftArrow.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + products.length) % products.length;
-        updateActiveProduct();
-    });
-
-    rightArrow.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % products.length;
-        updateActiveProduct();
-    });
-
-    updateActiveProduct();
+    }
+    if(rightArrow){
+        rightArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % products.length;
+            updateActiveProduct();
+        });
+    }
+    //updateActiveProduct();
 });

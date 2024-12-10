@@ -7146,7 +7146,9 @@ class ProductCore extends ObjectModel
         // result is indexed by recordset order and not position. positions start at index 1 so we need an empty element
         array_unshift($result, null);
         foreach ($result as &$value) {
-            $value = $value['id_product'];
+            if($value !== null){
+                $value = $value['id_product'];
+            }
         }
 
         $current_position = $this->getWsPositionInCategory();
@@ -7174,8 +7176,9 @@ class ProductCore extends ObjectModel
     public function getCoverWs()
     {
         $result = $this->getCover($this->id);
-
-        return $result['id_image'];
+        if(is_array($result) && isset($result['id_image'])){
+            return $result['id_image'];
+        }
     }
 
     /**
