@@ -24,19 +24,19 @@
  *}
 <section class="miedzydrutami-categories">
   <div class="miedzydrutami-categories__category">
-    <a href="/wloczki">
+    <a href="/63-wloczki">
         <img src="/themes/child_classic/assets/img/Kategorie-wloczka.jpg" alt="wloczki"">
         <p>Włóczki</p>
     </a>
   </div>
   <div class="miedzydrutami-categories__category">
-    <a href="/druty-do-dziergania/">
+    <a href="/78-Druty">
       <img src="/themes/child_classic/assets/img/Kategorie-druty.jpg" alt="druty"">
       <p>Druty</p>
     </a>
   </div>
   <div class="miedzydrutami-categories__category">
-    <a href="/akcesoria/">
+    <a href="/85-Akcesoria">
       <img src="/themes/child_classic/assets/img/Kategorie-akcesoria.jpg" alt="akcesoria"">
       <p>Akcesoria</p>
     </a>
@@ -59,31 +59,31 @@
     <div class="categories-content">
       <div class="category-section" id="wloczki">
         <div class="category-item">
-          <a href="/">
+          <a href="/76-wloczki-weganskie">
             <img src="/themes/child_classic/assets/img/category-tabs/1.jpg" alt="Włóczki wegańskie">
             <p>Włóczki wegańskie</p>
           </a>
         </div>
         <div class="category-item">
-          <a href="/">
+          <a href="/77-wloczki-bambusowe">
             <img src="/themes/child_classic/assets/img/category-tabs/2.jpg" alt="Włóczki bambusowe">
             <p>Włóczki bambusowe</p>
           </a>
         </div>
         <div class="category-item">
-          <a href="/">
+          <a href="/71-wloczki-z-jedwabiu">
             <img src="/themes/child_classic/assets/img/category-tabs/3.jpg" alt="Włóczki z jedwabiu">
             <p>Włóczki z jedwabiu</p>
           </a>
         </div>
         <div class="category-item">
-          <a href="/">
+          <a href="/72-wloczki-z-kaszmiru">
             <img src="/themes/child_classic/assets/img/category-tabs/4.webp" alt="Włóczki z kaszmiru">
             <p>Włóczki z kaszmiru</p>
           </a>
         </div>
         <div class="category-item">
-          <a href="/">
+          <a href="/70-wloczki-z-lnu">
             <img src="/themes/child_classic/assets/img/category-tabs/5.jpg" alt="Włóczki z lnu">
             <p>Włóczki z lnu</p>
           </a>

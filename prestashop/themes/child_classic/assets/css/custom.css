@@ -131,7 +131,7 @@ a:hover {
   cursor: pointer;
 }
 #header .header-top.miedzydrutami-header-top .container .row .nav-col--menu #search_widget form input {
-  display: none;
+  /*display: none;*/
   padding: 0.5rem 1rem;
 }
 #header .header-top.miedzydrutami-header-top .container .row .nav-col--menu #search_widget.active form input {
@@ -151,7 +151,7 @@ a:hover {
   padding-top: 0;
   background: #fff;
 }
-#wrapper .container {
+.page-index #wrapper .container {
   width: auto;
   max-width: initial;
   padding: 0;
