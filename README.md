@@ -51,5 +51,5 @@ Projekt został zrealizowany przez zespół:
 
 - Pliki ze skryptami Python znajdują się w katalogu scraper.
 - Dane scrapowane są przechowywane w bazie MySQL i ładowane do PrestaShop oraz są dostepne w katalogu scraper-data.
-- Upewnij się, że masz zainstalowane **Docker**, **Docker Compose** i **Pyhon** na swoim środowisku przed uruchomieniem projektu.
+- Upewnij się, że masz zainstalowane **Docker**, **Docker Compose** i **Python** na swoim środowisku przed uruchomieniem projektu.
 
