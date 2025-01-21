@@ -1,41 +1,28 @@
 services:
-  mysql:
-    platform: linux/amd64
-    image: mysql:5.7
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: secureeb24p
-      MYSQL_DATABASE: prestashop-db
-    volumes:
-      - ./dbdata:/var/lib/mysql
-    networks:
-      - prestashop-net
-
   prestashop:
-    platform: linux/amd64
-    build:
-      context: ./config
-      dockerfile: Dockerfile
-    image: prestashop/prestashop:1.7.8
-    restart: unless-stopped
+    image: jegji/bizele:presta
     environment:
-      DB_SERVER: mysql
-      DB_NAME: prestashop-db
+      DB_SERVER: admin-mysql_db
+      DB_NAME: BE_193333
       DB_USER: root
-      DB_PASSWD: secureeb24p
-      PS_INSTALL_AUTO: 
+      DB_PASSWD: student
+      PS_INSTALL_AUTO:
       PS_FOLDER_ADMIN: admXz5f9w7be
     ports:
-      - "8080:80"
-      - "443:443"
+      - "19333:443"
     networks:
+      - admin-mysql_default
       - prestashop-net
-    volumes:
-      - ./prestashop:/var/www/html
-    depends_on:
-      - mysql
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 512M
 
 networks:
   prestashop-net:
-volumes:
-  dbdata:
+  admin-mysql_default:
+    external: true
